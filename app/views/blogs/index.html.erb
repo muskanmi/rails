@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blogs</h1>
+
+<% @blogs.each do |blog| %>
+<div class="jumbotron">
+  <h1 class="display-4"><%= blog.title %></h1>
+  <p class="lead"><%= blog.body %></p>
+  <hr class="my-4">
+  <%= link_to 'Show', blog, class: "btn btn-primary btn-lg" %>
+  <%= link_to 'Edit', edit_blog_path(blog) %>
+  <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>
